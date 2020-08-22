@@ -5,7 +5,10 @@ import './App.css';
 function App() {
  
 
-  
+  const nayok = ['shawon','shafin','alamin','jasim','babu'];
+
+ 
+ 
 
   return (
     <div className="App">
@@ -14,8 +17,10 @@ function App() {
         
         <h1>Welcome to React Mr.Shawon Ahmed</h1>
         <UserList></UserList>
-       
-
+        
+        {
+          nayok.map(single=><Nayoks name={single}></Nayoks>)
+        }
         
         
 
@@ -25,6 +30,23 @@ function App() {
       </header>
     </div>
   );
+}
+
+function Nayoks(props){
+  console.log(props);
+  const heroStyle = {
+    border:'1px solid red',
+    backgroundColor:'tomato',
+    color:'yellow',
+    margin:'10px',
+    borderRadius:'5%'
+  }
+  return(
+    <div style={heroStyle}>
+      <h1>Name of Hero of Bangladesh: {props.name}</h1>
+      <p>I am pride of Bangladesh</p>
+    </div>
+  )
 }
 
 function UserList(){
